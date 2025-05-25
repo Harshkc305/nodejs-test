@@ -12,51 +12,50 @@
     <div class="container">
       <div class="row g-4">
 
-        <!-- Testimonial 1 -->
+        <!-- Testimonial 1 using foreach method -->
+
+
+
+         <!-- <% testimonials.forEach(function(t) { %>
         <div class="col-md-4">
           <div class="card shadow-sm border-0 h-100">
             <div class="card-body">
-              <p class="card-text">"MyCompany helped us revamp our entire website. The results were amazing, and we saw a 40% increase in traffic!"</p>
+
+              <p class="card-text"><%=t.massage %></p>
               <div class="d-flex align-items-center mt-4">
-                <img src="/images/t6.jpg" alt="Client 1" class="rounded-circle me-3" height="200" width="200">
+                <img src="<%= t.image %>" alt="<%= t.name %>" class="rounded-circle me-3" height="200" width="200">
                 <div>
-                  <h6 class="mb-0">Jane Smith</h6>
-                  <small class="text-muted">CEO, TechCorp</small>
+                  <h6 class="mb-0"> <%= t.name%></h6>
+                  <small class="text-muted"><%= t.role %></small>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Testimonial 2 -->
-        <div class="col-md-4">
+        <% }); %> -->
+
+<!--    testimonials using map mathod -->
+
+
+        <% testimonials.map(data=>{ %>
+          <div class="col-md-4">
           <div class="card shadow-sm border-0 h-100">
             <div class="card-body">
-              <p class="card-text">"Their team is professional, creative, and always delivers on time. Highly recommended for web development."</p>
+
+              <p class="card-text"><%=data.massage %></p>
               <div class="d-flex align-items-center mt-4">
-<img src="/images/priyanka.jpg" alt="Client 1" class="rounded-circle me-3" height="200" width="200">                <div>
-                  <h6 class="mb-0">Michael Lee</h6>
-                  <small class="text-muted">Founder, AppStart</small>
+                <img src="<%= data.image %>" alt="<%= data.name %>" class="rounded-circle me-3" height="200" width="200">
+                <div>
+                  <h6 class="mb-0"> <%= data.name%></h6>
+                  <small class="text-muted"><%= data.role %></small>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Testimonial 3 -->
-        <div class="col-md-4">
-          <div class="card shadow-sm border-0 h-100">
-            <div class="card-body">
-              <p class="card-text">"They understood our vision and delivered a website that perfectly represents our brand. Great experience!"</p>
-              <div class="d-flex align-items-center mt-4">
-<img src="/images/Sanam-Puri.jpg" alt="Client 1" class="rounded-circle me-3" height="200" width="200">                <div>
-                  <h6 class="mb-0">Sofia Patel</h6>
-                  <small class="text-muted">Marketing Head, BrightIdeas</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <% }) %>
 
       </div>
     </div>
